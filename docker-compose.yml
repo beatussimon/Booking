@@ -1,12 +1,10 @@
-version: '3'
-
 services:
   db: 
     image: postgres
   
   web: 
-    build: .  # Correctly indented under 'web'
+    build: .  
     volumes:
-      - .:/usr/src/app  # Added a leading '/' in the path
+      - .:/usr/src/app  
     ports:
-      - "8000:8000"  # Ensure proper formatting
+      - "8000:8000"  
