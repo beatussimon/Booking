@@ -5,8 +5,8 @@ services:
     image: postgres
   
   web: 
-  build: .
-  volumes:
-    -.:"usr/src/app"
-  port:
-    -"8000:8000"
+    build: .  # Correctly indented under 'web'
+    volumes:
+      - .:/usr/src/app  # Added a leading '/' in the path
+    ports:
+      - "8000:8000"  # Ensure proper formatting
