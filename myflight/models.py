@@ -28,4 +28,4 @@ class Flights(models.Model):
         return f"From {self.origin} to {self.destination} - {self.duration}"
     
     def is_flight_valid(self):
-        return self.origin != self.destination and self.duration >= 0
+        return self.origin != self.destination or self.duration >= 0
