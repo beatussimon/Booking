@@ -1,21 +1,12 @@
 name: Testing
-
 on: push
 
 jobs: 
   test_project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.12'  # You can specify the version of Python you want to use
-
-      - name: Install Django
-        run: |
-          pip install django  # Install Django, add other dependencies if needed
-
-      - name: Run Django unit tests
-        run: |
-          python manage.py test  # Run the tests
+    -uses: actions/checkout@v2
+    -name: Run Django unit tests
+      run: |
+        pip3 install --user django
+        python3 manage.py test
