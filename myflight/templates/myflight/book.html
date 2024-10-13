@@ -1,0 +1,16 @@
+{% extends "myflight/layout.html" %}
+
+{% block body %}
+  <h2>Book a seat on Flight {{ flight }}</h2>
+
+  <form action="{% url 'book' flight.id %}" method="post">
+    {% csrf_token %}
+    <label for="username">Enter your username:</label>
+    <input type="text" id="username" name="username">
+    <button type="submit">Book</button>
+  </form>
+
+  <p>Flight ID: {{ flight.id }}</p>
+  
+  <a href="{% url 'details' flight.id %}">Back to flight details</a>
+{% endblock %}

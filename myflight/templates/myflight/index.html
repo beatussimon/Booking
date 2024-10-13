@@ -1,0 +1,12 @@
+{% extends "myflight/layout.html" %}
+
+{% block body %}
+<h1>Available flights</h1>
+<ul>
+    {% for flight in flights %}
+    <a href="{% url 'details' flight.pk %}">{{flight.pk}}. {{flight}}</a> <br>    
+        {% empty %}
+        <h1>No flights.</h1>
+        {%endfor%}
+   </ul>
+{% endblock %}
